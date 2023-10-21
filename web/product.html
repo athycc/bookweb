@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta
+name="viewport" content="width=device-width,
+initial-scale=1">
+
+<style>
+body {margin:0;}
+
+ul {
+
+  list-style-type: none;
+
+  margin: 0;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  background-color: #523A28;
+
+  position: fixed;
+
+  top: 0;
+
+  width: 100%;
+
+}
+
+ 
+
+li {
+
+  float: left;
+
+}
+
+ 
+
+li a {
+
+  display: block;
+
+  color: white;
+
+  text-align: center;
+
+  padding: 14px 16px;
+
+  text-decoration: none;
+
+}
+
+ 
+
+li a:hover:not(.active)
+{
+
+  background-color: #000000;
+
+}
+
+ .footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 10%;
+   background-color: none;
+   color: white;
+   text-align: center; 
+</div>
+</style>
+
+</head>
+
+<style type="text/css">
+body{
+background-image:url('image.png');
+background-repeat:no-repeat;
+background-size:cover;
+}
+* {box-sizing: border-box}
+body {font-family: Cooper Black, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 10000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 16px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+</style>
+</head>
+<body>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="top.png" style="width:100%">
+  <div class="text">
+  <p style="color:black; background-color:#708090;">Top-Selling Books</p>
+  
+  </div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="fantasy.png" style="width:100%">
+  <div class="text">
+  <p style="color:black; background-color:#708090;">Imagination is more important than knowledge. Knowledge is limited. Imagination encircles the world.<br>
+  – Albert Einstein
+  </p>
+  </div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="magnus.png" style="width:100%">
+  <div class="text">
+  <p style="color:black; background-color:#708090;">Magnus Chase and the God of Astrad Trilogy</p>
+  </div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+ 
+ 
+ 
+ 
+ <style>
+ 
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: Cooper Black;
+  background-color: #d1d1e0;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+</style>
+
+
+<body>
+
+<h2 style="text-align:center">All products</h2>
+
+<div class="card">
+  <img src="almond.jpg" alt="almond" style="width:100%">
+  <h3>Almond<br>
+  Novel by: Sohn Won-pyung
+  </h3>
+  <p class="price">₱ 2,466</p>
+  <p>   
+  ALMOND is a book about a young Korean boy with underdeveloped amygdalae, leading to a condition called "alexithymia," 
+  which is a brain disorder in which a person can't really identify with or even experience emotions in a normal way (their own or others).</p>
+  <p><button>Add to Cart</button></p>
+</div>
+
+<div class="card">
+  <img src="your name.jpg" alt="your name" style="width:100%">
+  <h3>Your name<br>
+  Novel by Makoto Shinkai
+  </h3>
+  <p class="price">₱ 649.22</p>
+  <p>This story takes place in a small mountain village in Japan. Mitsuha, a high school girl of this village, leads a dull life and yearns for living in a big city. 
+  Then someday, she has a dream of her being a boy. In that dream she is in an unfamiliar house in Tokyo and surrounded with strange friends.   
+  </p>
+  <p><button>Add to Cart</button></p>
+</div>
+
+<div class="card">
+  <img src="jujutsu.jpg" alt="jujutsu" style="width:100%">
+  <h3>Jujutsu no Kaisen Vol.4<br>
+  Book by Gege Akutami
+  </h3>
+  <p class="price">₱ 477.81</p>
+  <p>While investigating a strange set of mysterious deaths, Itadori meets Junpei, a troubled kid who is often bullied at school. 
+  However, Junpei is also befriended by the culprit behind the bloody incident—Mahito, a mischievous cursed spirit! Mahito sets in motion a devious plan involving Junpei, hoping to ensnare Itadori as well.
+  </p>
+  <p><button>Add to Cart</button></p>
+</div>
+
+
+<div class="card">
+  <img src="no longer human.jpg" alt="no longer human" style="width:100%">
+  <h3>No Longer Human<br>
+  Novel by Osamu Dazai
+  </h3>
+  <p class="price">₱ 595.47</p>
+  <p>No Longer Human, published in 1948, is a timeless piece of writing that portrays the sense of isolation of Oba Yozo, a confused child who became a troubled man; roughly, 
+  a deceitful person unable to show his true nature to most people, a man disqualified as a human being. 
+  </p>
+  <p><button>Add to Cart</button></p>
+</div>
+
+<div class="card">
+  <img src="alchemist.jpg" alt="alchemist" style="width:100%">
+  <h3>The Alchemist<br>
+  Novel by Paulo Coelho
+  </h3>
+  <p class="price">₱ 1678.80</p>
+  <p>The Alchemist follows the journey of an Andalusian shepherd boy named Santiago. Believing a recurring dream to be prophetic, 
+  he asks a Gypsy fortune teller in the nearby town about its meaning. The woman interprets the dream as a prophecy telling the boy that he will discover a treasure at the Egyptian pyramids.
+  </p>
+  <p><button>Add to Cart</button></p>
+</div>
+
+<div class="card">
+  <img src="attack on titan.jpg" alt="attack on titan" style="width:100%">
+  <h3>Attack on Titan Vol.1<br>
+  Book by Hajime Isayama
+  </h3>
+  <p class="price">₱ 822.66</p>
+  <p>The story of Attack on Titan is about for the past century, what's left of mankind has hidden in a giant, three-walled city, trapped in fear of the bizarre, giant humanoids known as the Titans. 
+  Little is known about where they came from or why they are bent on consuming humankind, but the sudden appearance of an enormous Titan is about to change everything...
+  </p>
+  <p><button>Add to Cart</button></p>
+</div>
+
+<div class="card">
+  <img src="jung map of the soul.jpg" alt="jung map of the soul" style="width:100%">
+  <h3>Jung's Map of the Soul: An Introduction<br>
+  Book by Murray Stein
+  </h3>
+  <p class="price">₱ 951.32</p>
+  <p>The book offers readers a strong grounding in the basic principles of Jung's analytical psychology in addition to illuminating insights.
+  </p>
+  <p><button>Add to Cart</button></p>
+</div>
+
+<div class="card">
+  <img src="alice.jpg" alt="alice" style="width:100%">
+  <h3>Alice's Adventures in Wonderland<br>
+ Novel by Lewis Carroll
+  </h3>
+  <p class="price">₱ 449.59</p>
+  <p>Alice's Adventures in Wonderland is an 1865 novel by English author Lewis Carroll. It tells of a young girl named Alice, 
+  who falls through a rabbit hole into a subterranean fantasy world populated by peculiar, anthropomorphic creatures. It is considered to be one of the best examples of the literary nonsense genre.
+  </p>
+  <p><button>Add to Cart</button></p>
+</div>
+
+<div class="card">
+  <img src="weathering with you.jpg" alt="weathering with you" style="width:100%">
+  <h3>Weathering With You<br>
+  Novel by Makoto Shinkai
+  </h3>
+  <p class="price">₱ 506.96</p>
+  <p>During a period of exceptionally rainy weather, high-school boy Hodaka Morishima runs away from his troubled rural home to Tokyo and befriends an orphan girl who can manipulate the weather.
+  </p>
+  <p><button>Add to Cart</button></p>
+</div>
+
+<div class="card">
+  <img src="boku v3.jpg" alt="boku v3" style="width:100%">
+  <h3>Boku No Hero Academia Vol.3<br>
+  Book by Kohei Horikoshi
+  </h3>
+  <p class="price">₱ 291.87</p>
+  <p>A sinister group of villains has attacked the first-year U.A. students, but their real target is All Might. It's all that Midoriya and his classmates can do to hold them off until reinforcements arrive.
+  </p>
+  <p><button>Add to Cart</button></p>
+</div>
+
+<div class="card">
+  <img src="harry potter.jpg" alt="harry potter" style="width:100%">
+  <h3>Harry Potter and the Sorcerer's Stone<br>
+  Novel by J. K. Rowling
+  </h3>
+  <p class="price">₱ 547.02</p>
+  <p>Harry Potter, a boy who learns on his eleventh birthday that he is the orphaned son of two powerful wizards and possesses unique magical powers of his own. 
+  He is summoned from his life as an unwanted child to become a student at Hogwarts, an English boarding school for wizards. 
+  There, he meets several friends who become his closest allies and help him discover the truth about his parents' mysterious deaths.
+  </p>
+  <p><button>Add to Cart</button></p>
+</div>
+ 
+ <div class="card">
+  <img src="magnus.jpg" alt="magnus" style="width:100%">
+  <h3>Magnus Chase and the God of Asgard<br>
+  Novel by Rick Riordan
+  </h3>
+  <p class="price">₱ 396.32</p>
+  <p>Magnus Chase, a homeless teenager, has just learned an impossible secret: he is the son of a Norse god. 
+  Now he must search for a weapon that will save the world or herald its doom. There's just one little catch: to succeed, he first must die.
+  </p>
+  <p><button>Add to Cart</button></p>
+</div>
+ 
+ <div class="card">
+  <img src="full.jpg" alt="full" style="width:100%">
+  <h3>Fullmetal Alchemist Vol.1<br>
+  Book by Hiromu Arakawa
+  </h3>
+  <p class="price">₱ 476.44</p>
+  <p>Alchemy: the mystical power to alter the natural world, something between magic, art, and science. When two brothers, 
+  Edward and Alphonse Elric, used this power to grant their deepest wish, one of them lost an arm and a leg...and the other became nothing but a soul locked in a body of living steel.
+  </p>
+  <p><button>Add to Cart</button></p>
+</div>
+ 
+ <div class="card">
+  <img src="mythology.jpg" alt="mythology" style="width:100%">
+  <h3>Mythology<br>
+  Book by Edith Hamilton
+  </h3>
+  <p class="price">₱ 1175.12</p>
+  <p>The Greek creation story begins with only Chaos, Night, and Death. 
+  Next comes Love, and with it Heaven and Earth, and then monsters and the godlike Titans. The gods, who are children of the Titan Cronus, overthrow their father (led by Zeus) and rule the universe.
+  </p>
+  <p><button>Add to Cart</button></p>
+</div>
+ 
+ <div class="card">
+  <img src="school for good and evil.jpg" alt="school for good and evil" style="width:100%">
+  <h3>The School for Good and Evil<br>
+  Book by Soman Chainani
+  </h3>
+  <p class="price">₱ 700.59</p>
+  <p>A group of boys and girls are taken to an institution where they are trained to become fairy tale-like heroes and villains. 
+  Sophie had waited her entire life to be kidnapped by the School Master and taken away to train to be a fairytale hero at The School for Good and Evil.
+  </p>
+  <p><button>Add to Cart</button></p>
+</div>
+ 
+ <div class="card">
+  <img src="demon slayer v2.jpg" alt="demon slayer v2" style="width:100%">
+  <h3>Demon Slayer: Kimetsu no Yaiba, Vol. 2<br>
+  Book by Koyoharu Gotouge
+  </h3>
+  <p class="price">₱ 569.91</p>
+  <p>In Taisho-era Japan, kindhearted Tanjiro Kamado makes a living selling charcoal. 
+  But his peaceful life is shattered when a demon slaughters his entire family. His little sister Nezuko is the only survivor, but she has been transformed into a demon herself!
+  </p>
+  <p><button>Add to Cart</button></p>
+</div>
+ 
+ <div class="card">
+  <img src="little prince.jpg" alt="little prince" style="width:100%">
+  <h3>The Little Prince<br>
+  Novella by Antoine de Saint-Exupéry
+  </h3>
+  <p class="price">₱ 657.66</p>
+  <p>A pilot, stranded in the desert, meets a little boy who is a prince on a planet. 
+  Based on the story by Antoine de Saint-Exupery, this magical musical fable begins as a pilot makes a forced landing on the barren Sahara Desert. He is befriended by a "little" prince from the planet Asteroid B-612.
+  </p>
+  <p><button>Add to Cart</button></p>
+</div>
+ 
+ <div class="card">
+  <img src="code.jpg" alt="code" style="width:100%">
+  <h3>The Da Vinci Code<br>
+  Novel by Dan Brown
+  </h3>
+  <p class="price">₱ 428.27</p>
+  <p>The Da Vinci Code follows "symbologist" Robert Langdon and cryptologist Sophie Neveu after a murder in the Louvre Museum in Paris causes them to become involved in a battle between the Priory of Sion and Opus Dei 
+  over the possibility of Jesus Christ and Mary Magdalene having had a child together.
+  </p>
+  <p><button>Add to Cart</button></p>
+</div>
+ 
+ <div class="card">
+  <img src="1q84.jpg" alt="1q84" style="width:100%">
+  <h3>1Q84<br>
+  Novel by Haruki Murakami
+  </h3>
+  <p class="price">₱ 524.13</p>
+  <p>The novel is a story of how a woman named Aomame begins to notice strange changes occurring in the world. 
+  She is quickly caught up in a plot involving Sakigake, a religious cult, and her childhood love, Tengo, and embarks on a journey to discover what is "real".
+  </p>
+  <p><button>Add to Cart</button></p>
+</div>
+ 
+ <div class="card">
+  <img src="angel.jpg" alt="angel" style="width:100%">
+  <h3>Angels and Demons<br>
+  Novel by Dan Brown
+  </h3>
+  <p class="price">₱ 905.66</p>
+  <p>When Harvard symbologist Robert Langdon discovers the resurgence of an ancient brotherhood known as the Illuminati, he flies to Rome to warn the Vatican, 
+  the Illuminati's most hated enemy. Joining forces with beautiful Italian scientist Vittoria Vetra (Ayelet Zurer), Langdon follows a centuries-old trail of ancient symbols in the hope of preventing the 
+  Illuminati's deadly plot against the Roman Catholic Church from coming to fruition.
+  </p>
+  <p><button>Add to Cart</button></p>
+</div>
+ 
+ <div class="card">
+  <img src="lord of the rings.jpg" alt="lord of the rings" style="width:100%">
+  <h3>The Lord of the Rings<br>
+  Novel by PJ. R. R. Tolkien
+  </h3>
+  <p class="price">₱ 642.88</p>
+  <p>The future of civilization rests in the fate of the One Ring, which has been lost for centuries. Powerful forces are unrelenting in their search for it. 
+  But fate has placed it in the hands of a young Hobbit named Frodo Baggins (Elijah Wood), who inherits the Ring and steps into legend. 
+  A daunting task lies ahead for Frodo when he becomes the Ringbearer - to destroy the One Ring in the fires of Mount Doom where it was forged.
+  </p>
+  <p><button>Add to Cart</button></p>
+</div>
+ 
+ <div class="card">
+  <img src="inferno.jpg" alt="inferno" style="width:100%">
+  <h3>Inferno<br>
+  Novel by Dan Brown
+  </h3>
+  <p class="price">₱ 641.45</p>
+  <p>Harvard professor Robert Langdon is recruited by the World Health Organization (WHO) to help locate a deadly pathogen. The virus is believed to have been created by Bertrand Zobrist, 
+  a Transhumanist who thought that the world was in danger of collapse because of overpopulation.
+  </p>
+  <p><button>Add to Cart</button></p>
+</div>
+
+<div class="card">
+  <img src="hobbit.jpg" alt="hobbit" style="width:100%">
+  <h3>The Hobbit<br>
+  Novel by J. R. R. Tolkien
+  </h3>
+  <p class="price">₱ 605.20</p>
+  <p>The Hobbit is set within Tolkien's fictional universe and follows the quest of home-loving Bilbo Baggins, the titular hobbit, to win a share of the treasure guarded by Smaug the dragon. 
+  Bilbo's journey takes him from his light-hearted, rural surroundings into more sinister territory.
+  </p>
+  <p><button>Add to Cart</button></p>
+</div>
+ 
+
+<ul>
+
+  <li><a
+href="home.html">Home</a></li>
+
+  <li><a
+href="product.html">Products</a></li>
+
+<li><a
+href="Order Form.html">Order Form</a></li>
+
+  <li><a
+href="contact.html">Contact</a></li>
+
+  <li><a
+href="about.html">About</a></li>
+
+
+</ul>
+
+<div class="footer">
+ <img src="footer.png">
+</div>
+ 
+
+ 
+
+</body>
+</html>
